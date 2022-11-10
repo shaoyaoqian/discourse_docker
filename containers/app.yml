@@ -21,7 +21,7 @@ templates:
 ## see https://meta.discourse.org/t/17247 for details
 expose:
   - "80:80"   # http
-  - "443:443" # https
+  # - "443:443" # https
 
 env:
   http_proxy: http://127.0.0.1:7890
@@ -75,13 +75,16 @@ env:
   # DISCOURSE_SMTP_ENABLE_START_TLS: true           # (optional, default true)
   DISCOURSE_NOTIFICATION_EMAIL: 499908174@qq.com
 
-  ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate
-  # LETSENCRYPT_ACCOUNT_EMAIL: 499908174@qq.com
-  #DISCOURSE_MAXMIND_LICENSE_KEY: 1234567890123456
-
-  ## The http or https CDN address for this Discourse instance (configured to pull)
-  ## see https://meta.discourse.org/t/14857 for details
-  #DISCOURSE_CDN_URL: https://discourse-cdn.example.com
+  ## S3 storage
+  DISCOURSE_USE_S3: true
+  DISCOURSE_S3_REGION: whatever
+  DISCOURSE_S3_ENDPOINT: http://s3-ap-southeast-1.qiniucs.com
+  DISCOURSE_S3_ACCESS_KEY_ID: NLI1UowRkIZiebmdEZ7MWNDLtPYeqJWkc90MFn_0
+  DISCOURSE_S3_SECRET_ACCESS_KEY: NMgdo5YrD8zQhzc8ZGWH4t-pcGEeLOYzFYJZhiG-
+  DISCOURSE_S3_CDN_URL: http://qiniu.pengfeima.cn
+  DISCOURSE_S3_BUCKET: qiniu-s3
+  DISCOURSE_S3_BACKUP_BUCKET: qiniu-s3/backups
+  DISCOURSE_BACKUP_LOCATION: s3
 
 ## The Docker container is stateless; all data is stored in /shared
 volumes:
