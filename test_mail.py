@@ -13,14 +13,14 @@ smtpObj.quit()
 
 import smtplib
 smtpObj = smtplib.SMTP_SSL("smtp.qq.com")
-smtpObj.login("499908174@qq.com","sqzumccutcqvbiaf")
+smtpObj.login("499908174@qq.com","zzokkzruycbobicd")
 smtpObj.sendmail("499908174@qq.com","mapengfei@mail.nwpu.edu.cn","ddddfasdfa")
 smtpObj.quit()
 
 import smtplib
 smtpObj = smtplib.SMTP_SSL("smtp.163.com",465)
 smtpObj.login("merryjingle@163.com","OCDVFOFNDTXLIXGN")
-smtpObj.sendmail("merryjingle@163.com","merryjingle@163.com","ddddfasdfa")
+smtpObj.sendmail("merryjingle@163.com","499908174@qq.com","ddddfasdfa")
 smtpObj.quit()
 
 swaks --to 499908174@qq.com --from mapengfei@mail.nwpu.edu.cn --server smtp.nwpu.edu.cn --auth login --auth-user mapengfei@mail.nwpu.edu.cn  -p 25
